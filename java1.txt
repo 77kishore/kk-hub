@@ -1,0 +1,73 @@
+/* <Applet code=Mouse1 width=400 height=500>
+</Applet> */
+
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+public class Mouse1 extends Applet implements MouseListener,MouseMotionListener
+{
+String m1="Nothing";
+String km;
+String str= "  ";
+int mx=20,my=30;
+public void init()
+{
+addMouseMotionListener(this);
+addMouseListener(this);
+requestFocus();
+}
+public void mouseClicked(MouseEvent me)
+{
+m1="Mouse Clicked";
+repaint();
+}
+public void mouseEntered(MouseEvent me)
+{
+
+m1="Mouse Entered";
+repaint();
+}
+
+public void mouseExited(MouseEvent me)
+{
+m1="Mouse Exited";
+repaint();
+}
+
+public void mousePressed(MouseEvent me)
+{
+m1="Mouse Pressed";
+setForeground(Color.cyan);
+repaint();
+}
+public void mouseReleased(MouseEvent me)
+{
+
+m1="mouseReleased";
+setForeground(Color.magenta);
+repaint();
+}
+public void mouseDragged(MouseEvent me)
+{
+ m1="Mouse Dragged";
+setForeground(Color.red);
+
+repaint();
+}
+public void mouseMoved(MouseEvent me)
+{
+m1="Mouse Moved";
+setForeground(Color.green);
+repaint();
+}
+public void paint(Graphics g)
+{
+g.drawString(m1,mx,my);
+g.drawString(km,10,20);
+g.drawString(str,10,20);
+}}
+
